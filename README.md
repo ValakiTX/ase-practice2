@@ -4,6 +4,8 @@
 
 **Based on work of:** Gábor Bergmann, Gábor Szárnyas
 
+[![Continuous Integration](https://github.com/ValakiTX/ase-practice2/actions/workflows/ci.yml/badge.svg)](https://github.com/ValakiTX/ase-practice2/actions/workflows/ci.yml)
+
 ## Practice
 
 See https://github.com/ftsrg-edu/ase-labs/wiki/Practice-2a
