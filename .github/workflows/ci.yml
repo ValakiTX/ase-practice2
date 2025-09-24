@@ -10,9 +10,9 @@ jobs:
       fail-fast: false
       matrix:
         os:
-         - ubuntu-latest
-         - widows-latest
-         - macos-latest
+          - ubuntu-latest
+          - windows-latest
+          - macos-latest
     runs-on: ${{ matrix.os }}
     steps:
       - name: Set up JDK 21
@@ -32,6 +32,7 @@ jobs:
         with:
           path: |
             **/build/distributions/*
+            **/build/reports/*
 
   e2e-integration:
     name: E2E Integration test
@@ -40,9 +41,9 @@ jobs:
       fail-fast: false
       matrix:
         os:
-         - ubuntu-latest
-         - widows-latest
-         - macos-latest
+          - ubuntu-latest
+          - windows-latest
+          - macos-latest
     runs-on: ${{ matrix.os }}
     steps:
       - name: Set up JDK 21
@@ -57,10 +58,10 @@ jobs:
         with:
           name: artifact
           path: artifact
-      - name: Extract Disribution
+      - name: Extract Distribution
         uses: ihiroky/extract-action@v1
         with:
-          file-path: artifact/similarity/build/distributions/similarity.tar
+          file_path: artifact/similarity/build/distributions/similarity.tar
           extract_dir: dist
       - name: Test Similarity
         run: scripts/e2e-integration-test.sh
